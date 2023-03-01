@@ -1,6 +1,10 @@
 @import "main.css";
 
 #add-dot {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	z-index: 50;
 }
 
 body {

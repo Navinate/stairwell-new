@@ -1,6 +1,9 @@
 @import "main.css";
 
+#add-dot {
+}
+
 body {
-  background-color: black;
-  overflow: hidden;
+	background-color: black;
+	overflow: hidden;
 }

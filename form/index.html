@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Form - StairWELL</title>
-    <link href="../styles/form.css" rel="stylesheet" />
-    <script src="../lib/socket.io.min.js"></script>
-    <script src="../lib/p5.min.js"></script>
-    <script src="../lib/gesture.js"></script>
-  </head>
-  <body>
-    <main>
-      <h2>Select a color and then draw a gesture on the canvas</h2>
-      <div id="palette">
-        <input type="radio" name="colors" value="#FF0000" />
-        <input type="radio" name="colors" value="#00FF00" />
-        <input type="radio" name="colors" value="#0000FF" />
-        <input type="radio" name="colors" value="#00FFFF" />
-        <input type="radio" name="colors" value="#FF00FF" />
-        <input type="radio" name="colors" value="#FFFF00" />
-      </div>
-    </main>
-    <script src="form.js"></script>
-  </body>
+	<head>
+		<title>Form - StairWELL</title>
+		<link href="../styles/form.css" rel="stylesheet" />
+		<script src="../lib/socket.io.min.js"></script>
+		<script src="../lib/p5.min.js"></script>
+		<script src="../lib/gesture.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>StairWELL</h1>
+			<nav>
+				<a href="../index.html"><li>Home</li></a>
+				<a href="../form/index.html" class="current"><li>Form</li></a>
+			</nav>
+		</header>
+		<main>
+			<h2>Select a color and then draw a gesture on the canvas</h2>
+			<div id="palette">
+				<input type="radio" name="colors" value="#FF0000" />
+				<input type="radio" name="colors" value="#00FF00" />
+				<input type="radio" name="colors" value="#0000FF" />
+				<input type="radio" name="colors" value="#00FFFF" />
+				<input type="radio" name="colors" value="#FF00FF" />
+				<input type="radio" name="colors" value="#FFFF00" />
+			</div>
+		</main>
+		<script src="form.js"></script>
+	</body>
 </html>

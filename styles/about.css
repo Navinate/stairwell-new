@@ -1,0 +1,18 @@
+@import "main.css";
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-blue);
+  color: var(--highlight-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}

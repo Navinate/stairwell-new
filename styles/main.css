@@ -1,0 +1,11 @@
+:root {
+  --background-blue: #0e1f2f;
+  --highlight-white: #e1e0e0;
+  --accent-blue: #5b96c2;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,46 @@
+@import "main.css";
+* {
+  overflow: hidden;
+}
+body {
+  background-color: var(--background-blue);
+  color: var(--highlight-white);
+  font-size: 3rem;
+}
+main {
+  margin: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+.p5Canvas {
+  border-radius: 15px;
+}
+
+#palette {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  width: 50rem;
+  padding-bottom: 15px;
+}
+
+input[type="radio"] {
+  width: 12rem;
+  height: 8rem;
+  margin: 2rem;
+  border: none;
+  appearance: none;
+  border-radius: 15px;
+  background-color: white;
+  transition-duration: 0.1s;
+  border: 3px var(--background-blue) solid;
+}
+input[type="radio"]:checked {
+  transform: scale(1.1);
+  border-color: var(--highlight-white);
+}

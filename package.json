@@ -1,0 +1,15 @@
+{
+  "name": "stairwell",
+  "version": "1.0.0",
+  "description": "Repo for Purdue's StairWELL interactive art sculpture",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite --host"
+  },
+  "author": "Trey Cluff",
+  "license": "MIT",
+  "dependencies": {
+    "redis": "^4.6.4",
+    "socket.io": "^4.6.1"
+  }
+}

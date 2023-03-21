@@ -2,6 +2,8 @@
 const socket = io(); //LIVE SERVER
 console.log("connected to websocket");
 
+let maxPoints = 40;
+
 let radios = document.querySelectorAll("input");
 radios[Math.floor(Math.random() * radios.length)].setAttribute("checked", "checked");
 radios.forEach((rb) => {
@@ -27,7 +29,7 @@ function draw() {
 			if (pmouseY < height && pmouseY > 0) {
 				gest.addPoint(pmouseX, pmouseY);
 				index++;
-				if (index > 25) {
+				if (index > maxPoints) {
 					mouseUpAndSendData();
 					index = 0;
 				}

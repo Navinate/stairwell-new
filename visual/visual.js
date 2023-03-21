@@ -17,6 +17,7 @@ function draw() {
 	let index = 0;
 	gests.forEach((g) => {
 		g.update(t, index);
+		g.wiggle();
 		g.render();
 		index++;
 	});
@@ -54,6 +55,7 @@ document.getElementById("add-dot").addEventListener("mousedown", () => {
 		)
 	);
 	gests[gests.length - 1].addPoint(0, 0);
-	gests[gests.length - 1].addPoint(4, 4);
 	gests[gests.length - 1].addPoint(20, 20);
+	gests[gests.length - 1].addPoint(40, 40);
+	gests[gests.length - 1].addPoint(60, 60);
 });

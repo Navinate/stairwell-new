@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio - StairWELL</title>
+    <script src="../lib/pizzicato.min.js"></script>
+    <script src="../lib/socket.io.min.js"></script>
+    <script defer src="audio.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      p {
+        color: white;
+        font-size: 2rem;
+        font-family: sans-serif;
+        padding-bottom: 20px;
+      }
+      button {
+        border: none;
+        max-width: 200px;
+        border-radius: 50px;
+        padding: 5px 10px;
+        font-size: 1rem;
+      }
+
+      body div {
+        margin: 80px;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      body > div * {
+        margin: 20px 0;
+      }
+      #test-slider {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Audio is: <span id="audio-status">❌</span></p>
+    <button onclick="loadSongs();">Start Music</button>
+    <div>
+      <input id="test-slider" type="range" min="0" max="100" value="50" />
+      <input id="test-color" type="color" />
+      <button onclick="simData();">Send Test Data</button>
+      <span style="color: red; font-size: 0.75rem; margin-bottom: -10px">
+        Pressing this button will mess up when each set of sounds is triggered
+      </span>
+      <button onclick="playRandomNotes();">Play Random Notes</button>
+    </div>
+  </body>
+</html>

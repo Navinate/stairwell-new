@@ -30,6 +30,9 @@ socket.on(
   "server to gesture",
   (points, red, green, blue, alpha, girth, cap, join, speed, wiggle, smoothness) => {
     console.log("recieved data");
+    if (gests.length > 20) {
+      gests.shift();
+    }
     gests.push(
       //seed, colorVar, girth, cap, join, x, y, speed, wiggle, smoothness
       new Gesture(

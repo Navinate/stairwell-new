@@ -58,15 +58,17 @@ document.addEventListener("click", () => {
       random(120) + 20, // girth
       random(caps), // cap
       random(joins), // join
-      random(-width / 2, width / 2), // x
-      random(-height / 2, height / 2), // y
+      random(-width / 3, width / 3), // x
+      random(-height / 3, height / 3), // y
       random(1, 5), // speed
       random(100, 500), //wiggle
       random(1, 10) //smoothness
     )
   );
-  gests[gests.length - 1].addPoint(0, 0);
+  gests[gests.length - 1].addPoint(-20, 20);
   gests[gests.length - 1].addPoint(20, 20);
   gests[gests.length - 1].addPoint(40, 40);
   gests[gests.length - 1].addPoint(60, 60);
+  gests[gests.length - 1].addPoint(200, -200);
+  gests[gests.length - 1].addPoint(-200, 200);
 });

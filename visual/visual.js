@@ -61,14 +61,14 @@ document.addEventListener("click", () => {
       random(-width / 3, width / 3), // x
       random(-height / 3, height / 3), // y
       random(1, 5), // speed
-      random(100, 500), //wiggle
+      random(10, 400), //wiggle
       random(1, 10) //smoothness
     )
   );
-  gests[gests.length - 1].addPoint(-20, 20);
+  gests[gests.length - 1].addPoint(-10, 10);
+  gests[gests.length - 1].addPoint(10, 10);
   gests[gests.length - 1].addPoint(20, 20);
-  gests[gests.length - 1].addPoint(40, 40);
-  gests[gests.length - 1].addPoint(60, 60);
-  gests[gests.length - 1].addPoint(200, -200);
-  gests[gests.length - 1].addPoint(-200, 200);
+  gests[gests.length - 1].addPoint(30, 30);
+  gests[gests.length - 1].addPoint(100, -100);
+  gests[gests.length - 1].addPoint(-100, 100);
 });

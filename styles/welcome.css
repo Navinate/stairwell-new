@@ -1,5 +1,11 @@
 @import "main.css";
 
+body {
+  background-color: var(--background-blue);
+  color: var(--highlight-white);
+  font-family: sans-serif;
+}
+
 main {
   padding: 50px;
   display: flex;
@@ -13,7 +19,7 @@ main h1 {
   margin-bottom: 20px;
 }
 
-#intro-text {
+.intro-text {
   font-family: sans-serif;
   font-size: 48pt;
 }
@@ -27,7 +33,7 @@ main h1 {
   border: none;
   width: 400px;
   border-radius: 100px;
-  box-shadow: 8px 8px var(--background-blue);
+  box-shadow: 5px 5px 10px var(--highlight-white);
 }
 
 #go-creation:hover {

@@ -1,102 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Form - StairWELL</title>
-    <link href="../styles/form.css" rel="stylesheet" />
-    <script src="../lib/socket.io.min.js"></script>
-    <script src="../lib/p5.min.js"></script>
-    <script src="../lib/gesture.js"></script>
-    <script src="../lib/socketHelper.js"></script>
+    <title>Welcom</title>
+    <link href="../styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/welcome.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <!-- <header>
+    <header>
       <h1>StairWELL</h1>
       <nav>
-        <a href="../index.html"><li>Home</li></a>
-        <a href="../form/index.html" class="current"><li>Form</li></a>
+        <a href="../form/index.html" class="current"><li>Start</li></a>
       </nav>
-    </header> -->
+    </header>
     <main>
-      <div id="page-container">
-        <div class="page">
-          <p class="question">Please pick a color and draw a gesture..</p>
-          <p class="sub-text">
-            You can only draw one line, feel free to try again until you are happy
-          </p>
-          <div id="palette">
-            <input type="radio" name="colors" value="#ec1c24" />
-            <input type="radio" name="colors" value="#eb008b" />
-            <input type="radio" name="colors" value="#4d26db" />
-            <input type="radio" name="colors" value="#2e3191" />
-            <input type="radio" name="colors" value="#00a69c" />
-            <input type="radio" name="colors" value="#fff100" />
-            <input type="radio" name="colors" value="#f6921e" />
-          </div>
-        </div>
-        <div class="page">
-          <p class="question">Do you feel cheerful and in good spirits?</p>
-          <div class="scale-container">
-            <span>No</span>
-            <span>Yes</span>
-          </div>
-          <input type="range" min="0" max="100" value="50" id="a" class="slider" />
-        </div>
-        <div class="page">
-          <p class="question">Do you feel calm and relaxed?</p>
-          <div class="scale-container">
-            <span>No</span>
-            <span>Yes</span>
-          </div>
-          <input type="range" min="0" max="100" value="50" id="b" class="slider" />
-        </div>
-        <div class="page">
-          <p class="question">Do you feel active and vigorous?</p>
-          <div class="scale-container">
-            <span>No</span>
-            <span>Yes</span>
-          </div>
-          <input type="range" min="0" max="100" value="50" id="c" class="slider" />
-        </div>
-        <div class="page">
-          <p class="question">Do you wake up feeling fresh and rested?</p>
-          <div class="scale-container">
-            <span>No</span>
-            <span>Yes</span>
-          </div>
-          <input type="range" min="0" max="100" value="50" id="d" class="slider" />
-        </div>
-        <div class="page">
-          <p class="question">
-            Do you feel like your daily life has been filled with things that interest me?
-          </p>
-          <div class="scale-container">
-            <span>No</span>
-            <span>Yes</span>
-          </div>
-          <input type="range" min="0" max="100" value="50" id="e" class="slider" />
-        </div>
-        <div class="page">
-          <p class="question">Do you want to submit this drawing to the visual?</p>
-          <button class="go-visual">Send to Visual</button>
-        </div>
-      </div>
+      <h1>Welcome to the StairWELL project!</h1>
+      <p id="intro-text">
+        Press the button below to draw a scribble and explore how you are feeling right
+        now..
+      </p>
+      <a href="../creation/index.html"><button id="go-creation">Explore!</button></a>
     </main>
-    <div class="button-container">
-      <button class="go-next">Next Section</button>
-    </div>
-    <script defer src="form.js"></script>
   </body>
 </html>
-
-<!--
-    <h2>Select a color and then draw a gesture on the canvas</h2>
-      <div id="palette">
-        <input type="radio" name="colors" value="#ec1c24" />
-        <input type="radio" name="colors" value="#eb008b" />
-        <input type="radio" name="colors" value="#4d26db" />
-        <input type="radio" name="colors" value="#2e3191" />
-        <input type="radio" name="colors" value="#00a69c" />
-        <input type="radio" name="colors" value="#fff100" />
-        <input type="radio" name="colors" value="#f6921e" />
-      </div>
--->

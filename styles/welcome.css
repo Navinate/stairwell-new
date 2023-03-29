@@ -1,0 +1,35 @@
+@import "main.css";
+
+main {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  gap: 50px;
+}
+main h1 {
+  font-size: 50pt;
+  margin-bottom: 20px;
+}
+
+#intro-text {
+  font-family: sans-serif;
+  font-size: 48pt;
+}
+
+#go-creation {
+  outline: none;
+  background-color: var(--accent-blue);
+  color: var(--highlight-white);
+  font-size: 48pt;
+  padding: 20px 0;
+  border: none;
+  width: 400px;
+  border-radius: 100px;
+  box-shadow: 8px 8px var(--background-blue);
+}
+
+#go-creation:hover {
+  background-color: var(--background-blue);
+}

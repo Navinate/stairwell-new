@@ -30,10 +30,25 @@ async function init() {
       }
     });
 
-    socket.on("gesture to server", (color, points) => {
-      let data = { color: color, points: points };
-      client.LPUSH("gestures", JSON.stringify(data));
-    });
+    socket.on(
+      "gesture to server",
+      (points, red, green, blue, alpha, girth, cap, join, speed, wiggle, smoothness) => {
+        let data = {
+          points: points,
+          red: red,
+          green: green,
+          blue: blue,
+          alpha: alpha,
+          girth: girth,
+          cap: cap,
+          join: join,
+          speed: speed,
+          wiggle: wiggle,
+          smoothness: smoothness,
+        };
+        client.LPUSH("gestures", JSON.stringify(data));
+      }
+    );
   });
 
   //launch web server
@@ -73,7 +88,21 @@ async function popGestures() {
     //grab data from database
     let data = JSON.parse(await client.RPOP("gestures"));
     //emit to clients
-    io.emit("server to gesture", data.color, data.points);
+    io.emit(
+      "server to gesture",
+      data.points,
+      data.red,
+      data.green,
+      data.blue,
+      data.alpha,
+      data.girth,
+      data.cap,
+      data.join,
+      data.speed,
+      data.wiggle,
+      data.smoothness
+    );
+    console.log("send data to visual");
   }
 }
 

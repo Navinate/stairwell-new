@@ -87,17 +87,20 @@ main {
 #palette {
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr;
-  padding: 15px;
+  padding: 5vw;
+  grid-row-gap: 3vw;
+  grid-column-gap: 3vw;
 }
 
 input[type="radio"] {
-  width: 150px;
-  height: 150px;
+  width: 12vw;
+  height: 12vw;
   appearance: none;
-  border-radius: 15px;
+  border-radius: 1vw;
   background-color: white;
   transition-duration: 0.1s;
   border: 3px var(--background-blue) solid;
+  border-radius: 1vh;
 }
 input[type="radio"]:checked {
   transform: scale(1.1);

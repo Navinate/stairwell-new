@@ -14,89 +14,89 @@ let loadingStatus = document.getElementById("audio-status");
 function loadSongs() {
   document.querySelector("button").disabled = "true";
   base = new Pizzicato.Sound(
-    { source: "file", options: { path: "./sound/base.mp3", loop: true } },
+    { source: "file", options: { path: "../assets/base.mp3", loop: true } },
     () => {
       loadingStatus.innerHTML = "14%";
-      entry = new Pizzicato.Sound("./sound/entry.mp3", () => {
+      entry = new Pizzicato.Sound("../assets/entry.mp3", () => {
         loadingStatus.innerHTML = "28%";
-        cello = new Pizzicato.Sound("./sound/one/cello.mp3", () => {
+        cello = new Pizzicato.Sound("../assets/one/cello.mp3", () => {
           loadingStatus.innerHTML = "42%";
-          glacier = new Pizzicato.Sound("./sound/one/glacier.mp3", () => {
+          glacier = new Pizzicato.Sound("../assets/one/glacier.mp3", () => {
             loadingStatus.innerHTML = "56%";
-            tundra = new Pizzicato.Sound("./sound/one/tundra.mp3", () => {
+            tundra = new Pizzicato.Sound("../assets/one/tundra.mp3", () => {
               loadingStatus.innerHTML = "70%";
               blurosti = new Pizzicato.Sound(
                 {
                   source: "file",
-                  options: { path: "./sound/two/blurosti.mp3", loop: true },
+                  options: { path: "../assets/two/blurosti.mp3", loop: true },
                 },
                 () => {
                   loadingStatus.innerHTML = "84%";
                   chords = new Pizzicato.Sound(
                     {
                       source: "file",
-                      options: { path: "./sound/two/chords.mp3", loop: true },
+                      options: { path: "../assets/two/chords.mp3", loop: true },
                     },
                     () => {
                       randomSounds[0] = new Pizzicato.Sound(
-                        "./sound/random/1.mp3",
+                        "../assets/random/1.mp3",
                         () => {
                           randomSounds[1] = new Pizzicato.Sound(
-                            "./sound/random/2.mp3",
+                            "../assets/random/2.mp3",
                             () => {
                               randomSounds[2] = new Pizzicato.Sound(
-                                "./sound/random/3.mp3",
+                                "../assets/random/3.mp3",
                                 () => {
                                   randomSounds[3] = new Pizzicato.Sound(
-                                    "./sound/random/4.mp3",
+                                    "../assets/random/4.mp3",
                                     () => {
                                       randomSounds[4] = new Pizzicato.Sound(
-                                        "./sound/random/5.mp3",
+                                        "../assets/random/5.mp3",
                                         () => {
                                           randomSounds[5] = new Pizzicato.Sound(
-                                            "./sound/random/6.mp3",
+                                            "../assets/random/6.mp3",
                                             () => {
                                               randomSounds[6] = new Pizzicato.Sound(
-                                                "./sound/random/7.mp3",
+                                                "../assets/random/7.mp3",
                                                 () => {
                                                   randomSounds[7] = new Pizzicato.Sound(
-                                                    "./sound/random/8.mp3",
+                                                    "../assets/random/8.mp3",
                                                     () => {
                                                       randomSounds[8] =
                                                         new Pizzicato.Sound(
-                                                          "./sound/random/9.mp3",
+                                                          "../assets/random/9.mp3",
                                                           () => {
                                                             randomSounds[9] =
                                                               new Pizzicato.Sound(
-                                                                "./sound/random/10.mp3",
+                                                                "../assets/random/10.mp3",
                                                                 () => {
                                                                   randomSounds[10] =
                                                                     new Pizzicato.Sound(
-                                                                      "./sound/random/11.mp3",
+                                                                      "../assets/random/11.mp3",
                                                                       () => {
                                                                         randomSounds[11] =
                                                                           new Pizzicato.Sound(
-                                                                            "./sound/random/12.mp3",
+                                                                            "../assets/random/12.mp3",
                                                                             () => {
                                                                               randomSounds[12] =
                                                                                 new Pizzicato.Sound(
-                                                                                  "./sound/random/13.mp3",
+                                                                                  "../assets/random/13.mp3",
                                                                                   () => {
                                                                                     randomSounds[13] =
                                                                                       new Pizzicato.Sound(
-                                                                                        "./sound/random/14.mp3",
+                                                                                        "../assets/random/14.mp3",
                                                                                         () => {
                                                                                           randomSounds[14] =
                                                                                             new Pizzicato.Sound(
-                                                                                              "./sound/random/15.mp3",
+                                                                                              "../assets/random/15.mp3",
                                                                                               () => {
                                                                                                 bubbles =
                                                                                                   new Pizzicato.Sound(
-                                                                                                    "./sound/one/bubbles.mp3",
+                                                                                                    "../assets/one/bubbles.mp3",
                                                                                                     () => {
                                                                                                       pingpong =
                                                                                                         new Pizzicato.Sound(
-                                                                                                          "./sound/pingpong.mp3",
+                                                                                                          "../assets/pingpong.mp3",
                                                                                                           () => {
                                                                                                             init();
                                                                                                           }
@@ -166,28 +166,6 @@ function toggleHalf() {
   inLaterHalf = !inLaterHalf;
 }
 
-socket.on(
-  "server to gesture",
-  (points, red, green, blue, alpha, girth, cap, join, speed, wiggle, smoothness) => {
-    console.log("recieved data");
-    gests.push(
-      //seed, colorVar, girth, cap, join, x, y, speed, wiggle, smoothness
-      new Gesture(
-        random(99999),
-        color(red, green, blue, alpha),
-        girth,
-        cap,
-        join,
-        random(-width / 3, width / 3),
-        random(-height / 3, height / 3),
-        speed,
-        wiggle,
-        smoothness
-      )
-    );
-    gests[gests.length - 1].points = [...points];
-  }
-);
 /* WHO5 DISTINCT CALC -- SAVE FOR LATER
 let avgWhoFive = (a + b + c + d + e) / 5;
     let dA = Math.abs(a - avgWhoFive);

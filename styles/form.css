@@ -30,10 +30,19 @@ main {
 }
 
 .question {
-  margin: 15px 0px;
+  margin: 30px 15px;
+  font-size: 48pt;
+  font-family: sans-serif;
+}
+
+.sub-text {
+  font-family: sans-serif;
+  font-size: large;
+  color: var(--sub-gray);
 }
 
 .scale-container {
+  font-family: sans-serif;
   width: 100%;
   display: flex;
   padding: 0 50px;
@@ -49,10 +58,11 @@ main {
 
 .go-next {
   font-size: 7rem;
+  width: 100%;
   outline: none;
   padding: 5px 35px;
   border-radius: 30px;
-  margin: 5px;
+  margin: 5px 0px;
   background-color: var(--accent-blue);
   color: var(--highlight-white);
 }
@@ -69,7 +79,7 @@ main {
 
 .p5Canvas {
   margin: 0 auto;
-  border-radius: 15px;
+  border-radius: 50px;
 }
 
 #palette {
@@ -93,9 +103,32 @@ input[type="radio"]:checked {
 }
 
 .slider {
-  margin: 5px;
-  margin-bottom: 30px;
-  border-radius: 50px;
-  background: #d3d3d3;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100px;
   outline: none;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+/* for chrome/safari */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 100px;
+  background: var(--accent-blue);
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+/* for firefox */
+.slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 100px;
+  background: var(--accent-blue);
+  cursor: pointer;
+  border-radius: 50px;
 }

@@ -30,13 +30,14 @@ main h1 {
 
 .intro-text {
   font-family: sans-serif;
-  font-size: 48pt;
+  font-size: 36pt;
 }
 
 img {
   width: 50%;
-  margin: 0 auto;
+  margin: 15px auto;
   aspect-ratio: 1;
+  border-radius: 25px;
 }
 
 .flipped {
@@ -53,5 +54,7 @@ img {
   border-radius: 30px;
   margin: 5px 0px;
   background-color: var(--accent-blue);
+  border: none;
+  margin-top: 2rem;
   color: var(--highlight-white);
 }

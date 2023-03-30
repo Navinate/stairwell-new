@@ -11,15 +11,15 @@ function setup() {
   frameRate(60);
 }
 function draw() {
-  background(22);
+  background(0);
+  setGradient(0, 0, width, height, color(134, 219, 216), color(38, 34, 98));
+
   push();
   //scale(0.5);
   translate(width / 2, height / 2);
-  let index = 0;
   gests.forEach((g) => {
-    g.update(t, index);
-    g.drawBezier(t, index);
-    index++;
+    g.update(t);
+    g.drawBezier(t);
   });
   pop();
 
@@ -53,6 +53,9 @@ socket.on(
 );
 
 document.addEventListener("click", () => {
+  if (gests.length > 20) {
+    gests.shift();
+  }
   gests.push(
     new Gesture(
       //seed, hue, girth, cap, join, x, y, speed, wiggle, smoothness
@@ -75,3 +78,13 @@ document.addEventListener("click", () => {
   gests[gests.length - 1].addPoint(100, -100);
   gests[gests.length - 1].addPoint(-100, 100);
 });
+
+function setGradient(x, y, w, h, c1, c2) {
+  noFill();
+  for (let i = y; i <= y + h; i++) {
+    let inter = map(i, y, y + h, 0, 1);
+    let c = lerpColor(c1, c2, inter);
+    stroke(c);
+    line(x, i, x + w, i);
+  }
+}

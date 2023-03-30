@@ -2,14 +2,16 @@
 * {
   overflow: hidden;
 }
+
 body {
   background-color: var(--background-blue);
   color: var(--highlight-white);
   position: relative;
   height: 100vh;
 }
+
 main {
-  margin-top: 15px;
+  margin-top: 15vh;
   width: 90vw;
   margin: 0 auto;
   display: flex;
@@ -19,32 +21,34 @@ main {
 
 #page-container {
   width: 100%;
+  height: 100%;
 }
 
 .page {
   width: 100%;
-  font-size: 50px;
+  font-size: 50rem;
   display: flex;
   justify-content: center;
   flex-flow: column wrap;
-  padding: 0 50px;
+  padding: 0 5vw;
 }
 
 .question {
-  margin: 30px 15px;
-  font-size: 48pt;
+  margin: 1.6vh 1.35vw;
+  font-size: 1.75rem !important;
   font-family: sans-serif;
 }
 
 .sub-text {
   font-family: sans-serif;
-  font-size: 24pt;
+  font-size: 0.9rem;
   color: var(--sub-gray);
-  margin: 0px 15px 30px 15px;
+  margin: 0px 15px 0px 15px;
 }
 
 .scale-container {
   font-family: sans-serif;
+  font-size: 1rem;
   width: 100%;
   display: flex;
   padding: 0 50px;
@@ -52,28 +56,27 @@ main {
 }
 
 .button-container {
-  display: flex;
-  width: 800px;
-  margin: 20px auto;
-  justify-content: flex-end;
+  width: 100%;
+  height: 20vh;
+  position: relative;
+  text-align: center;
 }
 
 .go-next {
-  font-size: 7rem;
-  width: 100%;
+  font-size: 2rem;
   outline: none;
   padding: 5px 35px;
-  border-radius: 30px;
-  margin: 5px 0px;
+  border-radius: .5em;
+  margin: 5px;
   background-color: var(--accent-blue);
   color: var(--highlight-white);
 }
 
 .go-visual {
-  font-size: 7rem;
+  font-size: 2rem;
   outline: none;
   padding: 5px 35px;
-  border-radius: 30px;
+  border-radius: .5em;
   margin: 5px;
   background-color: var(--accent-blue);
   color: var(--highlight-white);
@@ -81,7 +84,7 @@ main {
 
 .p5Canvas {
   margin: 0 auto;
-  border-radius: 50px;
+  border-radius: 1em;
 }
 
 #palette {
@@ -102,6 +105,7 @@ input[type="radio"] {
   border: 3px var(--background-blue) solid;
   border-radius: 1vh;
 }
+
 input[type="radio"]:checked {
   transform: scale(1.1);
   border-color: var(--highlight-white);
@@ -110,7 +114,7 @@ input[type="radio"]:checked {
 .slider {
   -webkit-appearance: none;
   width: 100%;
-  height: 100px;
+  height: 2vh;
   outline: none;
   border-radius: 50px;
   margin-bottom: 20px;
@@ -120,20 +124,46 @@ input[type="radio"]:checked {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 100px;
-  height: 100px;
+  width: 2vh;
+  height: 2vh;
   background: var(--accent-blue);
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 1vh;
 }
 
 /* for firefox */
 .slider::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 100px;
-  height: 100px;
+  width: 2vh;
+  height: 2vh;
   background: var(--accent-blue);
   cursor: pointer;
   border-radius: 50px;
+}
+
+@media (orientation: landscape) {
+  #palette {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr;
+    padding: 2vh;
+    grid-row-gap: 1vh;
+    grid-column-gap: 1vh;
+  }
+  
+  input[type="radio"] {
+    width: 12vh;
+    height: 12vh;
+    appearance: none;
+    border-radius: 1vh;
+    background-color: white;
+    transition-duration: 0.1s;
+    border: 3px var(--background-blue) solid;
+    border-radius: 1vh;
+  }
+  
+  input[type="radio"]:checked {
+    transform: scale(1.1);
+    border-color: var(--highlight-white);
+  }
 }

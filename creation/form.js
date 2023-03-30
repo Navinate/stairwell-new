@@ -9,7 +9,9 @@ let cnv;
 
 //setup of canvas and 2 gests
 function setup() {
-  cnv = createCanvas(800, 800);
+  let winHeight = windowHeight - (windowHeight / 1.6)
+  let winWidth = windowWidth - (windowWidth * 0.1)
+  cnv = createCanvas(winWidth, winHeight);
   frameRate(24);
   //                 seed, hue, girth, cap, join, x, y, alpha, speed, wiggle, smoothness
   gest = new Gesture(100, color(0, 0, 0), 15, "ROUND", "ROUND", 0, 0, 255, 5, 5, 5);

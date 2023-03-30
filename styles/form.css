@@ -1,7 +1,5 @@
 @import "main.css";
-* {
-  overflow: hidden;
-}
+
 body {
   background-color: var(--background-blue);
   color: var(--highlight-white);

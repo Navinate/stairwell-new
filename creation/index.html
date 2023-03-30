@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Form - StairWELL</title>
+    <meta charset="UTF-8" />
     <link href="../styles/form.css" rel="stylesheet" />
     <script src="../lib/socket.io.min.js"></script>
     <script src="../lib/p5.min.js"></script>
@@ -33,6 +34,19 @@
             <input type="radio" name="colors" value="#f6921e" />
             <input type="radio" name="colors" value="#bfff24" />
           </div>
+        </div>
+        <div class="page">
+          <p class="question">
+            Awesome! So you've thought about how you feel now. What if you think about how
+            you've felt over, say, the last two weeks? Would that change the way you
+            describe how things are going?
+          </p>
+        </div>
+        <div class="page">
+          <p class="question">
+            So let's take a moment and think about how we've been feeling in the past
+            couple weeks.
+          </p>
         </div>
         <div class="page">
           <p class="question">Do you feel cheerful and in good spirits?</p>
@@ -82,13 +96,23 @@
           <input type="range" min="0" max="100" value="50" id="e" class="slider" />
         </div>
         <div class="page">
-          <p class="question">Do you want to submit this drawing to the visual?</p>
-          <button class="go-visual">Send to Visual</button>
+          <p class="question">
+            So, thanks for taking some time for yourself! There are lots of peeps taking
+            stock of their feelings, just like you. It's a good thing to do—and you check
+            in with yourself anytime.
+          </p>
+          <button class="go-visual">Add your Squiggle</button>
+        </div>
+        <div class="page">
+          <p class="question">
+            Did you know there are lots of amazing tools and supports here on campus to
+            help you do that check-in and more? <br />[links to come]
+          </p>
         </div>
       </div>
     </main>
     <div class="button-container">
-      <button class="go-next">Next Section</button>
+      <p class="go-next">➡️</p>
     </div>
     <script>
       var canvas = document.getElementsByClassName("p5Canvas");

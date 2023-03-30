@@ -77,7 +77,7 @@ function sendData() {
     gest2.wiggle,
     gest2.smoothness
   );
-  window.location.reload();
+  cyclePages();
 }
 
 //STORY LOGIC
@@ -132,8 +132,18 @@ function cyclePages() {
     pageIndex++;
 
     pages[pageIndex].style.display = "flex";
-    if (pageIndex >= 6) {
+    if (pageIndex >= pages.length - 1) {
       goNext.style.display = "none";
+    }
+
+    if (pageIndex == 8) {
+      document.querySelector(".go-next").style.display = "none";
+    } else {
+      //document.querySelector(".go-next").style.display = "block";
+    }
+
+    if (pageIndex == 9) {
+      document.querySelector(".p5Canvas").style.display = "none";
     }
   }
 }

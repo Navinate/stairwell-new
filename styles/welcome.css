@@ -7,31 +7,31 @@ body {
 }
 
 main {
-  padding: 50px;
+  padding: 1.5em;
   display: flex;
   justify-content: center;
   flex-flow: column;
   align-items: center;
-  gap: 50px;
+  gap: 1.0em;
 }
 main h1 {
-  font-size: 50pt;
+  font-size: 1.8em;
   margin-bottom: 20px;
 }
 
 .intro-text {
   font-family: sans-serif;
-  font-size: 48pt;
+  font-size: 1.7em;
 }
 
 #go-creation {
   outline: none;
   background-color: var(--accent-blue);
   color: var(--highlight-white);
-  font-size: 48pt;
-  padding: 20px 0;
+  font-size: 1.8em;
+  padding: .5em 0;
   border: none;
-  width: 400px;
+  width: 12rem;
   border-radius: 100px;
   box-shadow: 5px 5px 10px var(--highlight-white);
 }

@@ -4,6 +4,7 @@ body {
   background-color: var(--background-blue);
   color: var(--highlight-white);
   font-family: sans-serif;
+  height: 100% !important;
 }
 
 main {

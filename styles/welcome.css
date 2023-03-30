@@ -19,23 +19,39 @@ main h1 {
   margin-bottom: 20px;
 }
 
+.page {
+  width: 100%;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  padding: 0 50px;
+}
+
 .intro-text {
   font-family: sans-serif;
   font-size: 48pt;
 }
 
-#go-creation {
-  outline: none;
-  background-color: var(--accent-blue);
-  color: var(--highlight-white);
-  font-size: 48pt;
-  padding: 20px 0;
-  border: none;
-  width: 400px;
-  border-radius: 100px;
-  box-shadow: 5px 5px 10px var(--highlight-white);
+img {
+  width: 50%;
+  margin: 0 auto;
+  aspect-ratio: 1;
 }
 
-#go-creation:hover {
-  background-color: var(--background-blue);
+.flipped {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.go-next,
+#go-creation {
+  font-size: 7rem;
+  width: 100%;
+  outline: none;
+  padding: 5px 35px;
+  border-radius: 30px;
+  margin: 5px 0px;
+  background-color: var(--accent-blue);
+  color: var(--highlight-white);
 }

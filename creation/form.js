@@ -6,14 +6,17 @@ let noDraw = false;
 
 let gest, gest2;
 let cnv;
+let hex;
 
 //setup of canvas and 2 gests
 function setup() {
   cnv = createCanvas(800, 800);
   frameRate(24);
+
+  hex = document.querySelector('input[name="colors"]:checked').value;
   //                 seed, hue, girth, cap, join, x, y, alpha, speed, wiggle, smoothness
-  gest = new Gesture(100, color(0, 0, 0), 15, "ROUND", "ROUND", 0, 0, 255, 5, 5, 5);
-  gest2 = new Gesture(0, color(0, 0, 0), 10, "ROUND", "ROUND", 0, 0, 255, 0, 0, 0);
+  gest = new Gesture(100, color(hexToRgb(hex).r, hexToRgb(hex).g, hexToRgb(hex).b), 15, "ROUND", "ROUND", 0, 0, 255, 5, 5, 5);
+  gest2 = new Gesture(0, color(hexToRgb(hex).r, hexToRgb(hex).g, hexToRgb(hex).b), 10, "ROUND", "ROUND", 0, 0, 255, 0, 0, 0);
 }
 
 let index = 0;
@@ -41,12 +44,18 @@ function draw() {
     gest2.drawBezier(frameCount * 0.001, 0);
   }
 }
+
 /* let submitGest = document.getElementById("submit-gest");
 submitGest.addEventListener("mousedown", () => {
   if (gest.points.length > 0) {
     sendData();
   }
 }); */
+
+function updateColor() {
+  hex = document.querySelector('input[name="colors"]:checked').value;
+  gest.color = color(hexToRgb(hex).r, hexToRgb(hex).g, hexToRgb(hex).b);
+}
 
 //handles reset
 function mousePressed() {

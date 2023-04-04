@@ -1,7 +1,7 @@
 # StairWELL
 ![alt text](https://github.com/Navinate/stairwell-new/blob/main/assets/sculpture.png?raw=true)
 ## Intro
-Welcome to the main repo for **Purdue StairWell!** This repository hold the code for the interactive art piece including front-end forms, back-end data storage & processing, as well as the code for displaying the resulting visual onto a display.
+Welcome to the main repo for **Purdue StairWell!** This repository holds the code for the interactive art piece including front-end forms, back-end data storage & processing, as well as the code for displaying the resulting visual onto a display.
 ## Project Structure
 Each section of the project is in it's own folder for static "routing" and organization.
 - `form/` the form that students will fill out and draw their gesture with

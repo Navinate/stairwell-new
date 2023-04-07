@@ -29,7 +29,7 @@ Install needed packages.
 npm install
 ```
 
-Next, start the redis server on the default port (6379).
+Next, start the redis on the default port (6379).
 ```bash
 redis-server
 ```

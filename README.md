@@ -33,7 +33,7 @@ Next, start the redis on the default port (6379).
 ```bash
 redis-server
 ```
-For local testing comment line 3, and uncomment line 2 in `lib/socketHelper.js`, then within the `server/` folder start the server with Node.js.
+For local testing comment line 3, and uncomment line 2 in `lib/socketHelper.js`, then, within the `server/` folder start the server with Node.js.
 ```bash
 node main.js
 ```

@@ -26,7 +26,7 @@ cd stairwell-new
 ```
 Install needed packages.
 ```bash
-npm install
+npm ci
 ```
 
 Next, start the redis on the default port (6379).
@@ -37,7 +37,7 @@ For local testing comment line 3, and uncomment line 2 in `lib/socketHelper.js`,
 ```bash
 node main.js
 ```
-Finally use a tool like "live server" to locally host the files and open them in the browser.
+Finally use a tool like "live server" or "Vite" to locally host the files and veiw them.
 ## Staying Up To Date
 
 Pull the latest changes from this repository.

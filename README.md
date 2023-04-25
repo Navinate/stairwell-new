@@ -29,7 +29,7 @@ Install needed packages.
 npm ci
 ```
 
-Next, start the redis on the default port (6379).
+Next, start the redis on the default port (6379).  NOTE: This is run through WSL so milage may vary.
 ```bash
 redis-server
 ```

@@ -14,58 +14,44 @@ function setup() {
 	frameRate(24);
 
 	hex = document.querySelector('input[name="colors"]:checked').value;
-	//                 seed, hue, girth, cap, join, x, y, alpha, speed, wiggle, smoothness
 	gest = new Gesture(
-		100,
-		color(hexToRgb(hex).r, hexToRgb(hex).g, hexToRgb(hex).b),
-		15,
-		"ROUND",
-		"ROUND",
-		0,
-		0,
-		255,
-		5,
-		5,
-		5
+		color(hexToRgb(hex).r, hexToRgb(hex).g, hexToRgb(hex).b), // color
+		15, // agitatedness
+		0, // speed
+		0, // pointiness
+		255, // size
 	);
 	gest2 = new Gesture(
-		0,
-		color(hexToRgb(hex).r, hexToRgb(hex).g, hexToRgb(hex).b),
-		10,
-		"ROUND",
-		"ROUND",
-		0,
-		0,
-		255,
-		0,
-		0,
-		0
+		color(hexToRgb(hex).r, hexToRgb(hex).g, hexToRgb(hex).b), // color
+		15, // agitatedness
+		0, // speed
+		0, // pointiness
+		255, // size
 	);
 }
 
 let index = 0;
 
 function draw() {
-	background(255);
+	background(20);
 	if (!noDraw) {
-		if (pmouseX < width && pmouseX > 0) {
-			if (pmouseY < height && pmouseY > 0) {
-				if (mouseIsPressed && gest2.points.length < maxPoints) {
-					gest.addPoint(pmouseX, pmouseY);
-					if (frameCount % 2 == 0) {
-						gest2.addPoint(pmouseX, pmouseY);
-						index++;
-						if (index > maxPoints) {
-							index = 0;
-						}
-					}
-				}
-			}
-		}
+		// if (pmouseX < width && pmouseX > 0) {
+		// 	if (pmouseY < height && pmouseY > 0) {
+		// 		if (mouseIsPressed && gest2.points.length < maxPoints) {
+		// 			gest.addPoint(pmouseX, pmouseY);
+		// 			if (frameCount % 2 == 0) {
+		// 				gest2.addPoint(pmouseX, pmouseY);
+		// 				index++;
+		// 				if (index > maxPoints) {
+		// 					index = 0;
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }
 		gest.render();
 	} else {
-		//gest2.update();
-		gest2.drawBezier(frameCount * 0.001, 0);
+		gest2.update();
 	}
 }
 

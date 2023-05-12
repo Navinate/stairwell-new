@@ -4,18 +4,27 @@ console.log("connected to websocket");
 let creatures = [];
 let t = 0;
 
+function preload() {
+	loadSprites("../assets/sprites/");
+}
+
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	frameRate(60);
 }
+
 function draw() {
 	// background
 	background(0);
 	space(width, height, 200, 2);
 
 	push();
-	//scale(0.5);
-	//translate(width / 2, height / 2);
+
+	// display all images debug
+	// for (var i = 0; i < sprites.length; i++) {
+	// 	image(sprites[i], 50, 150 * i);
+	// }
+
 	creatures.forEach((g) => {
 		g.update(t);
 		g.drawCreatures(t);

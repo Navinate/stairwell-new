@@ -4,8 +4,15 @@ console.log("connected to websocket");
 let creatures = [];
 let t = 0;
 
+// arrays of sprites
+let tails = [];
+let bodies = [];
+let heads = [];
+
 function preload() {
-	loadSprites("../assets/sprites/");
+	heads  = loadSprites("../assets/sprites/heads/");
+	bodies = loadSprites("../assets/sprites/bodies/");
+	tails  = loadSprites("../assets/sprites/tails/");
 }
 
 function setup() {

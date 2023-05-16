@@ -4,9 +4,12 @@
 Welcome to the main repo for **Purdue StairWell!** This repository holds the code for the interactive art piece including front-end forms, back-end data storage & processing, as well as the code for displaying the resulting visual onto a display.
 ## Project Structure
 Each section of the project is in it's own folder for static "routing" and organization.
-- `form/` the form that students will fill out to design their displayed sprites.
--  `lib/` shared js files between sections
-- `server/` hub for websocket interaction that manages data and interacts with the redis database
+- `assets/` Diffrent assests (audio samples, sprites PNG's, etc.) that are used in diffrent places throughout the project.
+- `audio/` Debugging and testing for the audio component of the project.
+- `form/` The form that people will fill out to design their displayed sprites.
+- `form/` Welcome text to give background and introduce the project.
+-  `lib/` Shared js files between sections.
+- `server/` Hub for websocket interaction that manages data and interacts with the redis database
 - `styles/` css files for all routes in one place, main.css contains global styles across the project
 - `visual/` code for the visual that is to be displayed
 ## Setting Up

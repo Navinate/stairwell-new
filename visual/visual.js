@@ -79,9 +79,9 @@ document.addEventListener("click", () => {
         floor(random(0, 255)),
         floor(random(200, 255))
       ), // hue
-      random(0.0, 1), // agitatedness
+      random(0.0, 1.0), // agitatedness
       random(0.5, 2), // speed
-      floor(random(1, 20)), // pointiness
+      floor(random(1, 15)), // pointiness
       random(0.25, 2), // size
       [floor(random(0, 2)), floor(random(0, 2)), floor(random(0, 2))], // sprites
       random(-width / 3, width / 3), // x

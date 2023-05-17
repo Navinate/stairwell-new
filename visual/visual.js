@@ -16,9 +16,11 @@ let star_x = [],
 
 // preload images
 function preload() {
-  heads = loadSprites("../assets/sprites/heads/");
-  bodies = loadSprites("../assets/sprites/bodies/");
-  tails = loadSprites("../assets/sprites/tails/");
+  for (let i = 0; i < 2; i++) {
+  heads[i] = loadSprites("../assets/sprites/heads/", i);
+  bodies[i] = loadSprites("../assets/sprites/bodies/", i);
+  tails[i] = loadSprites("../assets/sprites/tails/", i);
+  }
 }
 
 // setup canvas and framerate before drawing
@@ -29,9 +31,13 @@ function setup() {
 
 // run every tick; draws background, space, and creatures
 function draw() {
+
   // background
   background(0);
   space(width, height, 200, 2);
+
+  image(heads[0][0], 50, 50);
+  image(tails[0][1], 50, 150);
 
   // draw each creature
   push();

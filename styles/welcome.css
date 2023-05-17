@@ -1,8 +1,14 @@
 @import "main.css";
 
+html {
+  min-height:100%;
+  position:relative;
+}
+
 body {
   color: var(--highlight-white);
   font-family: sans-serif;
+  height:100%;
 }
 
 main {
@@ -14,17 +20,18 @@ main {
   gap: 50px;
 }
 main h1 {
-  font-size: 50pt;
+  font-size: 48pt;
   margin-bottom: 20px;
 }
 
 .page {
+  z-index: 2;
   width: 100%;
-  font-size: 50px;
+  font-size: 45px;
   display: flex;
   justify-content: center;
   flex-flow: column wrap;
-  padding: 0 50px;
+  padding: 0 80px;
 }
 
 .intro-text {
@@ -59,12 +66,19 @@ img {
 }
 
 .scroll-bg {
+  z-index: 0;
   display: grid;
-  z-index: -1;
-  position: fixed;
-  left: 0px;
-  top: 0px;
+  position: absolute;
+  overflow: clip;
   width: 100%;
   height: 100%;
-  background: black;
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 13%, rgba(0,0,0,0) 77%, rgba(34,34,34,1) 96%, rgba(51,51,51,1) 100%);
+}
+
+#defaultCanvas0 {
+  z-index: -1;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 500%;
 }

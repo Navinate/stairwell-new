@@ -36,9 +36,6 @@ function draw() {
   background(0);
   space(width, height, 200, 2);
 
-  image(heads[0][0], 50, 50);
-  image(tails[0][1], 50, 150);
-
   // draw each creature
   push();
   creatures.forEach((g) => {

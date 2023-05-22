@@ -144,7 +144,8 @@ sendtoVisual.addEventListener("click", sendData);
 sendtoVisual.addEventListener("touchStart", sendData);
 
 function cyclePages() {
-	if (gest2.points.length > 0) {
+	if (true) {
+	//if (gest2.points.length > 0) {
 		pages.forEach((p) => {
 			p.style.display = "none";
 		});

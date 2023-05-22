@@ -1,18 +1,23 @@
 @import "main.css";
 
+html {
+  overflow: hidden;
+  width: 100vw !important;
+}
+
 body {
   background-color: var(--background-blue);
   color: var(--highlight-white);
   position: relative;
   height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
+
 main {
   margin-top: 15px;
   width: 90vw;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: column;
-  align-content: center;
+  margin: auto;
 }
 
 #page-container {
@@ -20,23 +25,22 @@ main {
 }
 
 .page {
-  width: 100%;
-  font-size: 50px;
+  font-size: 1em;
   display: flex;
   justify-content: center;
   flex-flow: column wrap;
-  padding: 0 50px;
 }
 
 .question {
+  padding-left: auto;
   margin: 30px 15px;
-  font-size: 48pt;
+  font-size: 3em;
   font-family: sans-serif;
 }
 
 .sub-text {
   font-family: sans-serif;
-  font-size: 24pt;
+  font-size: 2em;
   color: var(--sub-gray);
   margin: 0px 15px 30px 15px;
 }
@@ -51,7 +55,7 @@ main {
 
 .button-container {
   display: flex;
-  width: 800px;
+  width: 100vw;
   margin: 20px auto;
   justify-content: center;
   align-items: center;
@@ -85,12 +89,14 @@ main {
 #palette {
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr;
-  padding: 15px;
+  margin: auto;
 }
 
 input[type="radio"] {
-  width: 150px;
-  height: 150px;
+  width: 20vw;
+  height: 20vw;
+  max-width: 150px;
+  max-height: 150px;
   appearance: none;
   border-radius: 15px;
   background-color: white;

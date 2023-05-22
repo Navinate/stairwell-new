@@ -21,5 +21,3 @@ function cyclePages() {
     goNext.style.display = "none";
   }
 }
-
-

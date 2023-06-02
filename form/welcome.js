@@ -9,6 +9,11 @@ buttons.forEach((b) => {
   b.addEventListener("click", cyclePages);
 });
 
+let buttons2 = document.querySelectorAll(".go-explore");
+buttons2.forEach((b) => {
+  b.addEventListener("click", cyclePages);
+});
+
 let pageIndex = 0;
 function cyclePages() {
   pages.forEach((p) => {

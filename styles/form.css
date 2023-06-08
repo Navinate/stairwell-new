@@ -33,6 +33,7 @@ main {
 }
 
 .question {
+  padding-top: 150px;
   padding-left: auto;
   margin: 30px 15px;
   font-size: 3em;

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>Settings - StairWELL</title>
+    <meta charset="UTF-8" />
+    <link href="../styles/main.css" rel="stylesheet" />
+    <link href="../styles/settings.css" rel="stylesheet" />
+    <script>parent_window = window.opener;</script>
+</head>
+<body class="settings">
+    <div class="content">
+        <h1>Backdrops:</h1>
+        <div class="buttons">
+            <label class="radio">
+                <input class="background" type="radio" name="background" value="gradient" checked="checked" onChange="parent_window.setBackground(this.value)" />
+                Gradient
+            </label>
+            <label class="radio">
+                <input class="background" type="radio" name="background" value="space" onChange="parent_window.setBackground(this.value)" />
+                Space / Snow
+            </label>
+        </div>
+    </div>
+</body>
+</body>
+</html>

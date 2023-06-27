@@ -137,9 +137,9 @@ img.backgroundStairs {
 }
 
 .grid-container {
+  row-gap:  210px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
   padding: 10px;
 }
 
@@ -147,35 +147,60 @@ img.backgroundStairs {
   font-size: 30px;
 }
 
+.stairs1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
 .text1 {
   grid-row-start: 1;
-  grid-row-end: 1;
+  grid-row-end: 2;
   grid-column-start: 1;
   grid-column-end: 3;
 }
 
-.text2 {
+.blank1 {
   grid-row-start: 1;
-  grid-row-end: 1;
+  grid-row-end: 2;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.blank2 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.text2 {
+  grid-row-start: 2;
+  grid-row-end: 3;
   grid-column-start: 2;
   grid-column-end: 4;
 }
 
+.text3 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 3;
+}
 
 .image1, .image2, .image3 {
   padding-bottom: 50px;
 }
 
 .text1, .text2, .text3, .text4, .text5, .text6, .text7 {
-  padding-top: 80px;
   border-radius: 10px;
   /* border: solid 2px white; */
   margin-bottom: 10px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 .float-container {
-
   margin-left: auto;
   margin-right: auto;
   animation: shrink 1s;

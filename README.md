@@ -4,7 +4,7 @@
 Welcome to the main repo for **Purdue StairWell!** This repository holds the code for the interactive art piece including front-end forms, back-end data storage & processing, as well as the code for displaying the resulting visual onto a display.
 ## Project Structure
 Each section of the project is in it's own folder for static "routing" and organization.
-- `form/` the form that students will fill out and draw their gesture with
+- `form/` the form that students will fill out to design their displayed sprites.
 -  `lib/` shared js files between sections
 - `server/` hub for websocket interaction that manages data and interacts with the redis database
 - `styles/` css files for all routes in one place, main.css contains global styles across the project
@@ -29,7 +29,7 @@ Install needed packages.
 npm ci
 ```
 
-Next, start the redis on the default port (6379).
+Next, start the redis on the default port (6379).  NOTE: [On Windows this is run through WSL so milage may vary.](https://redis.io/docs/getting-started/installation/install-redis-on-windows/)
 ```bash
 redis-server
 ```

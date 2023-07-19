@@ -5,6 +5,7 @@
     <link href="../styles/main.css" rel="stylesheet" />
     <link href="../styles/settings.css" rel="stylesheet" />
     <script>parent_window = window.opener;</script>
+    <script src="../lib/gesture.js"></script>
 </head>
 <body class="settings">
     <div class="content">
@@ -18,6 +19,17 @@
                 <input class="background" type="radio" name="background" value="space" onChange="parent_window.setBackground(this.value)" />
                 Space / Snow
             </label>
+        </div>
+        <h1><br>Gesture Scalars:</h1>
+        <div clas='gestues'>
+            <label class="slider">
+                Wigglyness
+            </label>
+            <input type="range" min="0" max="5" value="1" class="slider" name="wiggle" onchange="parent_window.updateGest(this.name, this.value)" />
+            <label class="slider">
+                Girth
+            </label>
+            <input type="range" min="0" max="5" value="1" class="slider" name="girth" onchange="parent_window.updateGest(this.name, this.value)" />
         </div>
     </div>
 </body>

@@ -6,9 +6,12 @@ if (window.location.href.split('/')[4] != "settings.html") {
 	settingsWindow = true;
 }
 
-// variables for bg
+// variables on settings page
 let bg_width, bg_height = 0;
 let bg = "gradient";
+
+// scalars for gesture variables
+//let girth_scalar = 1, maxSpeed_scalar = 1, wiggle_scalar = 1, smooth_scalar = 1;
 
 
 const socket = connectToWebSocket();
@@ -42,6 +45,26 @@ function draw() {
 	pop();
 
 	t += 0.0005;
+}
+
+function updateGest(attribute, scalar) {
+	maxSpeed_scalar, wiggle_scalar, smooth_scalar;
+	switch (attribute) {
+		case "girth":
+			girth_scalar = scalar;
+			console.log(girth_scalar);
+			break;
+		case "wiggle":
+			wiggle_scalar = scalar;
+			break;
+		case "max_speed":
+			max_speed_scalar = scalar;
+			break;
+		case "smooth":
+			smooth_scalar = scalar;
+			break;
+	}
+	//window.location.reload();
 }
 
 // function to change the background

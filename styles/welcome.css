@@ -152,8 +152,9 @@ img.backgroundStairs {
   grid-row-end: 3;
   grid-column-start: 1;
   grid-column-end: 4;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  aspect-ratio: 12/9;
 }
 
 .text1 {
@@ -178,6 +179,7 @@ img.backgroundStairs {
 }
 
 .text2 {
+  padding-top: 100px;
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 2;
@@ -194,7 +196,7 @@ img.backgroundStairs {
 .image1,
 .image2,
 .image3 {
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 }
 
 .text1,

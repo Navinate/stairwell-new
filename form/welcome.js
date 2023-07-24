@@ -30,6 +30,8 @@ function cyclePages() {
 	}
 }
 
+
+
 document.addEventListener("scroll", function () {
 	var st = window.scrollY || document.documentElement.scrollTop;
 

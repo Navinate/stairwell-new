@@ -2,81 +2,56 @@
 <html>
 
 <head>
-  <title>Welcome</title>
-  <link href="../styles/main.css" rel="stylesheet" type="text/css" />
-  <link href="../styles/welcome.css" rel="stylesheet" type="text/css" />
-  <script src="../lib/p5.min.js"></script>
-  <script defer src="welcome.js" type="text/javascript"></script>
+	<title>Welcome</title>
+	<link href="../styles/main.css" rel="stylesheet" type="text/css" />
+	<link href="../styles/welcome.css" rel="stylesheet" type="text/css" />
+	<script src="../lib/p5.min.js"></script>
+	<script defer src="welcome.js" type="text/javascript"></script>
 </head>
 
 <body>
-  <script src="../lib/stars.js"></script>
-  <!-- <header style="background:black; border-bottom: solid 5px; z-index: 3 !important; top: 0px; position: sticky;">
-      <img
-          src="../assets/title.png"
-          alt="image of the stairWELL sculpture concept"
-          style="
-          aspect-ratio: 2.5/1 !important;
-          width: 80%;
-          padding: 20px;
-          object-fit: contain;
-          border-radius: 0px;"
-        />
-    </header> -->
-  <main>
-    <div class="page first-page">
-      <!-- <h1 style="text-align: center;";>Welcome to</h1> -->
-      <img src="../assets/title.png" alt="image of the stairWELL sculpture concept" style="
+	<script src="../lib/stars.js"></script>
+	<main>
+		<div class="page first-page">
+			<!-- <h1 style="text-align: center;";>Welcome to</h1> -->
+			<img src="../assets/title.png" alt="image of the stairWELL sculpture concept" style="
           aspect-ratio: 2.5/.7 !important;
           width: 80%;
           object-fit: contain;
           margin-top: -50px;
           overflow: clip;
           margin-bottom: -20px;" />
-      <p class="intro-text" style="text-align: center;">
-      </p>
-      <!-- <img
-          syle="overflow: hidden;"
-          src="../assets/final-characters-stringcheese1.png"
-          alt="image of the stairWELL sculpture concept"
-          class="string-cheese"
-        /> -->
-      <div class="float-container">
-        <img syle="overflow: hidden;" src="../assets/main3.png" alt="image of the stairWELL sculpture concept"
-          class="main3" />
-        <div id="centered-text">
-          <!-- <div id="first" class="float-child">Art&nbsp;</div><div id="first" class="float-child">+&nbsp;Tech</div><div id="first" class="float-child">&nbsp;=&nbsp;Wellness</div> -->
-          <p>Art + Tech = Wellness</p>
-        </div>
-      </div>
-      <div class="sculpture">
-        <img src="../assets/sculpture.png" alt="image of the stairWELL sculpture concept" style="
-            aspect-ratio: 2.2/1;""
-          />
-          <button class=" btn">Explore</button>
-      </div>
-    </div>
-    <div class="page">
-      <img src="../assets/blue_glow.png" class="backgroundStairs">
-      <img src="../assets/bottom.png" class="backgroundStairs">
-      <div class="grid-container">
-        <div class="stairs1">
-          <img src="../assets/stairs.png">
-        </div>
-        <div class="text1">
-          <p class="intro-text">
-            Welcome to StairWELL, an interactive sculpture and gathering place
-          </p>
-        </div>
-        <div class="blank1"></div>
-        <div class="text2">
-          <p class="intro-text">
-            What makes it interactive is that YOU create the art.
-            We know you’re busy. But this is easy– just take a moment for yourself.
-          </p>
-        </div>
-        <div class="blank2"></div>
-        <!-- <div class="text3">
+			<div class="float-container">
+				<img syle="overflow: hidden;" src="../assets/homepage.gif"
+					alt="image of the stairWELL sculpture concept" class="main3" Loop=False />
+			</div>
+			<div class="sculpture">
+				<img src="../assets/sculpture.png" alt="image of the stairWELL sculpture concept"
+					style="aspect-ratio: 2.2/1;" />
+				<button class=" btn">Explore</button>
+			</div>
+		</div>
+		<div class="page">
+			<img src="../assets/blue_glow.png" class="backgroundStairs">
+			<img src="../assets/bottom.png" class="backgroundStairs">
+			<div class="grid-container">
+				<div class="stairs1">
+					<img src="../assets/stairs.png">
+				</div>
+				<div class="text1">
+					<p class="intro-text">
+						Welcome to StairWELL, an interactive sculpture and gathering place
+					</p>
+				</div>
+				<div class="blank1"></div>
+				<div class="text2">
+					<p class="intro-text">
+						What makes it interactive is that YOU create the art.
+						We know you’re busy. But this is easy– just take a moment for yourself.
+					</p>
+				</div>
+				<div class="blank2"></div>
+				<!-- <div class="text3">
             <p class="intro-text">
               Sometimes we’re heading upstairs
             </p>
@@ -97,10 +72,10 @@
             </br></br>You can play with the sculpture by projecting your emotions onto the surface.
             </p>
           </div>      -->
-      </div>
-      <div>
-        <a href="../creation/index.html"><button id="go-creation">Reflect</button></a>
-        <p class="intro-text" style="color: red; margin-bottom: 150px;"">
+			</div>
+			<div>
+				<a href="../creation/index.html"><button id="go-creation">Reflect</button></a>
+				<p class="intro-text" style="color: red; margin-bottom: 150px;"">
             All UI, style, and questions are in prototyping and do not reflect the final
             product
           </p>

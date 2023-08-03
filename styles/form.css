@@ -6,19 +6,12 @@ html {
 }
 
 body {
-  background-color: var(--background-blue);
+  background-color: rgba(0, 0, 0, 0);
   color: var(--highlight-white);
   position: relative;
   height: 100vh;
   width: 100%;
-  overflow-x: hidden;
-}
-
-main {
-  margin-top: 15px;
-  width: 90vw;
-  margin: auto;
-  max-width: 800px;
+  overflow: hidden;
 }
 
 #page-container {
@@ -83,7 +76,6 @@ main {
 
 .p5Canvas {
   margin: 0 auto;
-  border-radius: 50px;
 }
 
 #palette {

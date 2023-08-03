@@ -7,134 +7,112 @@
     <link href="../styles/form.css" rel="stylesheet" />
     <script src="../lib/socket.io.min.js"></script>
     <script src="../lib/p5.min.js"></script>
-    <!-- <script src="../lib/gesture.js"></script> -->
+    <script src="form.js"></script>
     <script src="../lib/socketHelper.js"></script>
   </head>
+
   <body>
-    <!-- <header>
-      <h1>StairWELL</h1>
-      <nav>
-        <a href="../index.html"><li>Home</li></a>
-        <a href="../form/index.html" class="current"><li>Form</li></a>
-      </nav>
-    </header> -->
-    <main>
-      <div id="page-container">
-        <div class="page">
-          <p class="question">Please pick a color..</p>
-          <p class="sub-text">
-            Feel Free To Choose Any!
-          </p>
-          <div id="palette">
-            <input type="radio" name="colors" value="#ec1c24" onChange="updateColor()"/>
-            <input type="radio" name="colors" value="#eb008b" onChange="updateColor()"/>
-            <input type="radio" name="colors" value="#4d26db" onChange="updateColor()"/>
-            <input type="radio" name="colors" value="#2e3191" onChange="updateColor()"/>
-            <input type="radio" name="colors" value="#00a69c" onChange="updateColor()"/>
-            <input type="radio" name="colors" value="#fff100" onChange="updateColor()"/>
-            <input type="radio" name="colors" value="#f6921e" onChange="updateColor()"/>
-            <input type="radio" name="colors" value="#bfff24" onChange="updateColor()"/>
-          </div>
-        </div>
-          <p class="question">
-            Awesome! So you've thought about how you feel now. What if you think about how
-            you've felt over, say, the last two weeks? Would that change the way you
-            describe how things are going?
-          </p>
-          <p class="question">
-            So let's take a moment and think about how we've been feeling in the past
-            couple weeks.
-          </p>
-          <p class="question">Do you feel cheerful and in good spirits?</p>
-          <p class="sub-text">(Size)</p>
-          <div class="scale-container">
-            <span>No</span>
-            <span>Yes</span>
-          </div>
-          <input type="range" min="1" max="5" value="3" id="a" class="slider" list="steplist" autocomplete="off"/>
-          <datalist id="steplist">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </datalist>
-          <p class="question">Do you feel calm and relaxed?</p>
-          <p class="sub-text">(Opacity)</p>
-          <div class="scale-container">
-            <span>No</span>
-            <span>Yes</span>
-          </div>
-          <input type="range" min="0" max="100" value="50" id="b" class="slider" autocomplete="off"/>
-          <p class="question">Do you feel active and vigorous?</p>
-          <p class="sub-text">(Move Speed)</p>
-          <div class="scale-container">
-            <span>No</span>
-            <span>Yes</span>
-          </div>
-          <input type="range" min="0" max="100" value="50" id="c" class="slider" autocomplete="off"/>
-          <p class="question">Do you wake up feeling fresh and rested?</p>
-          <p class="sub-text">(Wiggle-factor)</p>
-          <div class="scale-container">
-            <span>No</span>
-            <span>Yes</span>
-          </div>
-          <input type="range" min="0" max="100" value="50" id="d" class="slider" autocomplete="off"/>
-          <p class="question">
-            Do you feel like your daily life has been filled with things that interest me?
-          </p>
-          <p class="sub-text">(Smoothness - WIP)</p>
-          <div class="scale-container">
-            <span>No</span>
-            <span>Yes</span>
-          </div>
-          <input type="range" min="0" max="100" value="50" id="e" class="slider" autocomplete="off"/>
-          <p class="question">
-            So, thanks for taking some time for yourself! There are lots of peeps taking
-            stock of their feelings, just like you. It's a good thing to do—and you check
-            in with yourself anytime.
-          </p>
-          <button class="go-visual">Add your Squiggle</button>
-          <p class="question">
-            Did you know there are lots of amazing tools and supports here on campus to
-            help you do that check-in and more? <br />[links to come]
-          </p>
-        </div>
-      </div>
-    </main>
-    <div class="button-container">
-      <p class="go-next">➡️</p>
+    <div class="main-page">
+      <script src="../lib/stars.js"></script>
     </div>
-    <script>
-      var canvas = document.getElementsByClassName("p5Canvas");
-      document.body.addEventListener(
-        "touchstart",
-        function (e) {
-          if (e.target == canvas) {
-            e.preventDefault();
-          }
-        },
-        { passive: false }
-      );
-      document.body.addEventListener(
-        "touchend",
-        function (e) {
-          if (e.target == canvas) {
-            e.preventDefault();
-          }
-        },
-        { passive: false }
-      );
-      document.body.addEventListener(
-        "touchmove",
-        function (e) {
-          if (e.target == canvas) {
-            e.preventDefault();
-          }
-        },
-        { passive: false }
-      );
-    </script>
-    <script defer src="form.js"></script>
+
+    <div class="page page1">
+      <p class="question">Please pick a color..</p>
+      <p class="sub-text">
+        Feel Free To Choose Any!
+      </p>
+      <div id="palette">
+        <input type="radio" name="colors" value="#ec1c24" onChange="updateColor()"/>
+        <input type="radio" name="colors" value="#eb008b" onChange="updateColor()"/>
+        <input type="radio" name="colors" value="#4d26db" onChange="updateColor()"/>
+        <input type="radio" name="colors" value="#2e3191" onChange="updateColor()"/>
+        <input type="radio" name="colors" value="#00a69c" onChange="updateColor()"/>
+        <input type="radio" name="colors" value="#fff100" onChange="updateColor()"/>
+        <input type="radio" name="colors" value="#f6921e" onChange="updateColor()"/>
+        <input type="radio" name="colors" value="#bfff24" onChange="updateColor()"/>
+      </div>
+    </div>
+
+    <!-- <div class="page page2">
+      <p class="question">
+        Awesome! So you've thought about how you feel now. What if you think about how
+        you've felt over, say, the last two weeks? Would that change the way you
+        describe how things are going?
+      </p>
+    </div> -->
+
+    <div class="page page2">
+      <p class="question">
+        So let's take a moment and think about how we've been feeling in the past
+        couple weeks.
+      </p>
+      <p class="question">Do you feel cheerful and in good spirits?</p>
+      <p class="sub-text">(Size)</p>
+      <div class="scale-container">
+        <span>No</span>
+        <span>Yes</span>
+      </div>
+      <input type="range" min="1" max="5" value="3" id="a" class="slider" list="steplist" autocomplete="off"/>
+      <datalist id="steplist">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </datalist>
+    </div>
+
+    <div class="page page3">
+      <p class="question">Do you feel calm and relaxed?</p>
+      <p class="sub-text">(Opacity)</p>
+      <div class="scale-container">
+        <span>No</span>
+        <span>Yes</span>
+      </div>
+      <input type="range" min="0" max="100" value="50" id="b" class="slider" autocomplete="off"/>
+    </div>
+
+    <div class="page page4">
+      <p class="question">Do you feel active and vigorous?</p>
+      <p class="sub-text">(Move Speed)</p>
+      <div class="scale-container">
+        <span>No</span>
+        <span>Yes</span>
+      </div>
+      <input type="range" min="0" max="100" value="50" id="c" class="slider" autocomplete="off"/>
+    </div>
+
+    <div class="page page5">
+      <p class="question">Do you wake up feeling fresh and rested?</p>
+      <p class="sub-text">(Wiggle-factor)</p>
+      <div class="scale-container">
+        <span>No</span>
+        <span>Yes</span>
+      </div>
+      <input type="range" min="0" max="100" value="50" id="d" class="slider" autocomplete="off"/>
+    </div>
+
+    <div class="page page6">
+      <p class="question">
+        Do you feel like your daily life has been filled with things that interest me?
+      </p>
+      <p class="sub-text">(Smoothness - WIP)</p>
+      <div class="scale-container">
+        <span>No</span>
+        <span>Yes</span>
+      </div>
+      <input type="range" min="0" max="100" value="50" id="e" class="slider" autocomplete="off"/>
+    </div>
+
+    <!-- <p class="question">
+      So, thanks for taking some time for yourself! There are lots of peeps taking
+      stock of their feelings, just like you. It's a good thing to do—and you check
+      in with yourself anytime.
+    </p>
+    <button class="go-visual">Add your Squiggle</button>
+    <p class="question">
+      Did you know there are lots of amazing tools and supports here on campus to
+      help you do that check-in and more? <br />[links to come]
+    </p> -->
   </body>
 </html>

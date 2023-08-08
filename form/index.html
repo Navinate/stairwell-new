@@ -1,69 +1,85 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Welcome</title>
-    <link href="../styles/main.css" rel="stylesheet" type="text/css" />
-    <link href="../styles/welcome.css" rel="stylesheet" type="text/css" />
-    <script defer src="welcome.js" type="text/javascript"></script>
-  </head>
-  <body>
-    <header>
-      <h1>StairWELL</h1>
-    </header>
-    <main>
-      <div class="page">
-        <h1>Welcome to StairWELL</h1>
-        <img
-          src="../assets/sculpture.png"
-          alt="image of the stairWELL sculpture concept"
-        />
-        <button class="go-next">Explore</button>
-      </div>
-      <div class="page">
-        <h1>Hi, I'm Kiki.</h1>
-        <p class="intro-text">
-          I'm your friendly neighborhood Moodologist, which is kinda like a friend that
-          meets you where you are.
-        </p>
-        <img
-          class="flipped"
-          src="../assets/kiki.png"
-          alt="image of the stairWELL mascot, Kiki"
-        />
-        <button class="go-next">Next</button>
-      </div>
-      <div class="page">
-        <h1>This is StairWELL,</h1>
-        <p class="intro-text">
-          a cool and interactive project for campus, and it's definitely not about
-          homework... Think of it like a mood ring for campus!
-        </p>
-        <img src="../assets/kiki.png" alt="image of the stairWELL mascot, Kiki" />
-        <button class="go-next">Next</button>
-      </div>
-      <div class="page">
-        <h1>Did you know...</h1>
-        <p class="intro-text">
-          that emotions can be weird? They can change from week to week, day to day, even
-          minute to minute! And it can feel like weather that is passing by.
-        </p>
-        <img
-          class="flipped"
-          src="../assets/kiki.png"
-          alt="image of the stairWELL mascot, Kiki"
-        />
-        <button class="go-next">Next</button>
-      </div>
-      <div class="page">
-        <h1>So, how are you today?</h1>
-        <p class="intro-text">
-          Here's an idea - draw a squiggle that captures how you feel right now!
-        </p>
-        <a href="../creation/index.html"><button id="go-creation">Explore!</button></a>
-        <p class="intro-text" style="color: red">
-          All UI, style, and questions are in prototyping and do not reflect the final
-          product
-        </p>
+
+<head>
+	<title>Welcome</title>
+	<link href="../styles/main.css" rel="stylesheet" type="text/css" />
+	<link href="../styles/welcome.css" rel="stylesheet" type="text/css" />
+	<script src="../lib/p5.min.js"></script>
+	<script defer src="welcome.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<script src="../lib/stars.js"></script>
+	<main>
+		<div class="page first-page">
+			<!-- <h1 style="text-align: center;";>Welcome to</h1> -->
+			<img src="../assets/title.png" alt="image of the stairWELL sculpture concept" style="
+          aspect-ratio: 2.5/.7 !important;
+          width: 80%;
+          object-fit: contain;
+          margin-top: -50px;
+          overflow: clip;
+          margin-bottom: -20px;" />
+			<div class="float-container">
+				<img syle="overflow: hidden;" src="../assets/homepage.gif"
+					alt="image of the stairWELL sculpture concept" class="main3" Loop=False />
+			</div>
+			<div class="sculpture">
+				<img src="../assets/sculpture.png" alt="image of the stairWELL sculpture concept"
+					style="aspect-ratio: 2.2/1;" />
+				<button class=" btn">Explore</button>
+			</div>
+		</div>
+		<div class="page">
+			<img src="../assets/blue_glow.png" class="backgroundStairs">
+			<img src="../assets/bottom.png" class="backgroundStairs">
+			<div class="grid-container">
+				<div class="stairs1">
+					<img src="../assets/stairs.png">
+				</div>
+				<div class="text1">
+					<p class="intro-text">
+						Welcome to StairWELL, an interactive sculpture and gathering place
+					</p>
+				</div>
+				<div class="blank1"></div>
+				<div class="text2">
+					<p class="intro-text">
+						What makes it interactive is that YOU create the art.
+						We know you’re busy. But this is easy– just take a moment for yourself.
+					</p>
+				</div>
+				<div class="blank2"></div>
+				<!-- <div class="text3">
+            <p class="intro-text">
+              Sometimes we’re heading upstairs
+            </p>
+          </div>
+          <div class="text4">
+            <p class="intro-text">
+              Sometimes we’re heading down
+            </p>
+          </div>
+          <div class="text5">
+            <p class="intro-text">
+              And sometimes it’d just be nice to play around!
+            </p>
+          </div>
+          <div class="text6">
+            <pYou class="intro-text">
+              The animations flowing across StairWELL are the real-time emotions of other Purdue students.
+            </br></br>You can play with the sculpture by projecting your emotions onto the surface.
+            </p>
+          </div>      -->
+			</div>
+			<div>
+				<a href="../creation/index.html"><button id="go-creation">Reflect</button></a>
+				<p class="intro-text" style="color: red; margin-bottom: 150px;"">
+            All UI, style, and questions are in prototyping and do not reflect the final
+            product
+          </p>
+        </div>
       </div>
     </main>
   </body>

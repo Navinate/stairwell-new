@@ -1,18 +1,17 @@
 @import "main.css";
 
+html {
+  overflow: hidden;
+  width: 100vw !important;
+}
+
 body {
-  background-color: var(--background-blue);
+  background-color: rgba(0, 0, 0, 0);
   color: var(--highlight-white);
   position: relative;
   height: 100vh;
-}
-main {
-  margin-top: 15px;
-  width: 90vw;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: column;
-  align-content: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 #page-container {
@@ -20,23 +19,23 @@ main {
 }
 
 .page {
-  width: 100%;
-  font-size: 50px;
+  font-size: 1em;
   display: flex;
   justify-content: center;
   flex-flow: column wrap;
-  padding: 0 50px;
 }
 
 .question {
+  padding-top: 150px;
+  padding-left: auto;
   margin: 30px 15px;
-  font-size: 48pt;
+  font-size: 3em;
   font-family: sans-serif;
 }
 
 .sub-text {
   font-family: sans-serif;
-  font-size: 24pt;
+  font-size: 2em;
   color: var(--sub-gray);
   margin: 0px 15px 30px 15px;
 }
@@ -45,26 +44,24 @@ main {
   font-family: sans-serif;
   width: 100%;
   display: flex;
-  padding: 0 50px;
+  padding: 0 5px;
   justify-content: space-between;
 }
 
 .button-container {
   display: flex;
-  width: 800px;
+  width: 100vw;
   margin: 20px auto;
   justify-content: center;
   align-items: center;
 }
 
+.scale-container > span {
+  font-size: 30px !important;
+}
+
 .go-next {
   font-size: 7rem;
-  /*outline: none;
-  padding: 5px 35px;
-  border-radius: 30px;
-  margin: 5px 0px;
-  background-color: var(--accent-blue);
-  color: var(--highlight-white); */
 }
 
 .go-visual {
@@ -79,18 +76,19 @@ main {
 
 .p5Canvas {
   margin: 0 auto;
-  border-radius: 50px;
 }
 
 #palette {
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr;
-  padding: 15px;
+  margin: auto;
 }
 
 input[type="radio"] {
-  width: 150px;
-  height: 150px;
+  width: 20vw;
+  height: 20vw;
+  max-width: 150px;
+  max-height: 150px;
   appearance: none;
   border-radius: 15px;
   background-color: white;
@@ -103,20 +101,21 @@ input[type="radio"]:checked {
 }
 
 .slider {
+  margin-top: 40px;
   -webkit-appearance: none;
   width: 100%;
-  height: 100px;
+  height: 100%;
   outline: none;
   border-radius: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 120px;
 }
 
 /* for chrome/safari */
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background: var(--accent-blue);
   cursor: pointer;
   border-radius: 50px;
@@ -126,9 +125,19 @@ input[type="radio"]:checked {
 .slider::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background: var(--accent-blue);
   cursor: pointer;
   border-radius: 50px;
+}
+
+.slider::-moz-range-track {
+  background: repeating-linear-gradient(to right, 
+  #000 4%,
+  #ccc 1%,
+  #ccc 26.22%, 
+  #000 26.22%, 
+  #000 27.22%,
+  #ccc 26.22%)
 }

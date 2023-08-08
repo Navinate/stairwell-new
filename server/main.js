@@ -22,8 +22,8 @@ async function init() {
 
   io.on("connection", (socket) => {
     console.log("client connected");
-    socket.on("form to server", (color, a, b, c, d, e, text) => {
-      let data = { color: color, a: a, b: b, c: c, d: d, e: e };
+    socket.on("form to server", (color, a, b, text) => {
+      let data = { color: color, a: a, b: b };
       client.LPUSH(redisKey, JSON.stringify(data));
       if (text !== "") {
         client.LPUSH("thoughts", text);
@@ -31,22 +31,18 @@ async function init() {
     });
 
     socket.on(
-      "gesture to server",
-      (points, red, green, blue, alpha, girth, cap, join, speed, wiggle, smoothness) => {
+      "creature to server",
+      (points, red, green, blue, alpha, pointiness, speed) => {
         let data = {
           points: points,
           red: red,
           green: green,
           blue: blue,
           alpha: alpha,
-          girth: girth,
-          cap: cap,
-          join: join,
-          speed: speed,
-          wiggle: wiggle,
-          smoothness: smoothness,
+          pointiness: pointiness,
+          speed: speed
         };
-        client.LPUSH("gestures", JSON.stringify(data));
+        client.LPUSH("creatures", JSON.stringify(data));
       }
     );
   });
@@ -57,7 +53,7 @@ async function init() {
   //init starting interval
   timer = setInterval(popData, maxInterval);
 
-  setInterval(popGestures, 1000);
+  setInterval(popCreatues, 1000);
 }
 
 async function popData() {
@@ -82,25 +78,21 @@ async function popData() {
   timer = setInterval(popData, interval);
 }
 
-async function popGestures() {
-  let dataCount = await client.LLEN("gestures");
+async function popCreatues() {
+  let dataCount = await client.LLEN("creatures");
   if (dataCount > 0) {
     //grab data from database
-    let data = JSON.parse(await client.RPOP("gestures"));
+    let data = JSON.parse(await client.RPOP("creatures"));
     //emit to clients
     io.emit(
-      "server to gesture",
+      "server to creature",
       data.points,
       data.red,
       data.green,
       data.blue,
       data.alpha,
-      data.girth,
-      data.cap,
-      data.join,
-      data.speed,
-      data.wiggle,
-      data.smoothness
+      data.pointiness,
+      data.speed
     );
     console.log("send data to visual");
   }

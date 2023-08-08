@@ -1,88 +1,123 @@
 const socket = connectToWebSocket();
 console.log("connected to websocket");
 
-const caps = ["ROUND", "SQUARE", "PROJECT"];
-const joins = ["MITER", "BEVEL", "ROUND"];
-let gests = [];
-let t = 0;
+// array of creatues
+let creatures = [];
 
+// arrays of sprites
+let tails = [];
+let bodies = [];
+let heads = [];
+
+// stars
+let star_x = [],
+  star_y = [],
+  stars_made = false;
+
+// preload images
+function preload() {
+  for (let i = 0; i < 2; i++) {
+  heads[i] = loadSprites("../assets/sprites/heads/", i);
+  bodies[i] = loadSprites("../assets/sprites/bodies/", i);
+  tails[i] = loadSprites("../assets/sprites/tails/", i);
+  }
+}
+
+// setup canvas and framerate before drawing
 function setup() {
-	createCanvas(windowWidth, windowHeight);
-	frameRate(60);
+  createCanvas(windowWidth, windowHeight);
+  frameRate(60);
 }
+
+// run every tick; draws background, space, and creatures
 function draw() {
-	background(0);
-	setGradient(0, 0, width, height, color(134, 219, 216), color(38, 34, 98));
 
-	push();
-	//scale(0.5);
-	translate(width / 2, height / 2);
-	gests.forEach((g) => {
-		g.update(t);
-		g.drawBezier(t);
-	});
-	pop();
+  // background
+  background(0);
+  space(width, height, 200, 2);
 
-	t += 0.0005;
+  // draw each creature
+  push();
+  creatures.forEach((g) => {
+    g.update();
+    g.drawCreatures();
+  });
+  pop();
+
 }
 
-socket.on("server to gesture", (points, red, green, blue, alpha, girth, cap, join, speed, wiggle, smoothness) => {
-	console.log("recieved data");
-	if (gests.length > 20) {
-		gests.shift();
-	}
-	gests.push(
-		//seed, colorVar, girth, cap, join, x, y, speed, wiggle, smoothness
-		new Gesture(
-			random(99999),
-			color(red, green, blue, alpha),
-			girth,
-			cap,
-			join,
-			random(-width / 3, width / 3),
-			random(-height / 3, height / 3),
-			speed,
-			wiggle,
-			smoothness
-		)
-	);
-	gests[gests.length - 1].points = [...points];
-});
+// draw creatures from DB
+socket.on(
+  "server to gesture",
+  (points, red, green, blue, alpha, size, speed) => {
+    console.log("recieved data");
+    if (creatures.length > 20) {
+      creatures.shift();
+    }
+    creatures.push(
+      new Creature(
+        random(99999),
+        color(red, green, blue, alpha),
+        pointiness,
+        random(-width / 3, width / 3),
+        random(-height / 3, height / 3),
+        size,
+        speed
+      )
+    );
+    creatures[creatures.length - 1].points = [...points];
+  }
+);
 
+// click to add creatues for debugging
 document.addEventListener("click", () => {
-	if (gests.length > 20) {
-		gests.shift();
-	}
-	gests.push(
-		new Gesture(
-			//seed, hue, girth, cap, join, x, y, speed, wiggle, smoothness
-			random(99999), // seed
-			color(200, 10, 89, 128), // hue
-			random(120) + 20, // girth
-			random(caps), // cap
-			random(joins), // join
-			random(-width / 3, width / 3), // x
-			random(-height / 3, height / 3), // y
-			random(1, 5), // speed
-			random(10, 400), //wiggle
-			random(1, 10) //smoothness
-		)
-	);
-	gests[gests.length - 1].addPoint(-10, 10);
-	gests[gests.length - 1].addPoint(10, 10);
-	gests[gests.length - 1].addPoint(20, 20);
-	gests[gests.length - 1].addPoint(30, 30);
-	gests[gests.length - 1].addPoint(100, -100);
-	gests[gests.length - 1].addPoint(-100, 100);
+  if (creatures.length > 20) {
+    creatures.shift();
+  }
+  creatures.push(
+    new Creature(
+      color(
+        floor(random(0, 255)),
+        floor(random(0, 255)),
+        floor(random(0, 255)),
+        floor(random(200, 255))
+      ), // hue
+      random(0.0, 1.0), // agitatedness
+      random(0.5, 2), // speed
+      floor(random(1, 15)), // pointiness
+      random(0.25, 2), // size
+      [floor(random(0, 2)), floor(random(0, 2)), floor(random(0, 2))], // sprites
+      random(-width / 3, width / 3), // x
+      random(-height / 3, height / 3) // y
+    )
+  );
 });
 
-function setGradient(x, y, w, h, c1, c2) {
-	noStroke();
-	for (let i = y; i <= y + h; i += h / 10) {
-		let inter = map(i, y, y + h, 0, 1);
-		let c = lerpColor(c1, c2, inter);
-		fill(c);
-		rectMode(CORNERS);
-		rect(x, i, x + w, i + h / 10);
-	}
+// draw space background
+function space(w, h, star_count, star_size) {
+  noStroke();
+  fill(0);
+  rectMode(CORNERS);
+  rect(0, 0, w, h);
+
+  if (stars_made == false) {
+    for (let i = 0; i <= star_count - 1; i++) {
+      star_x[i] = randomGaussian(w / 2, w / 2);
+      star_y[i] = randomGaussian(h / 2, h / 2);
+      stars_made = true;
+    }
+  }
+
+  for (let i = 0; i <= star_count - 1; i++) {
+    fill(255);
+    circle(star_x[i], star_y[i], star_size);
+    star_y[i] += 0.1;
+    if (abs(randomGaussian(0, 3) > 6)) {
+      star_x[i] += randomGaussian(0, 1);
+    }
+    if (star_x[i] >= w || star_y[i] >= h) {
+      star_x[i] = randomGaussian(w / 2, w / 2);
+      star_y[i] = randomGaussian(h / 2, h / 2);
+    }
+  }
 }
